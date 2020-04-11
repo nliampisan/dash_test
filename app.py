@@ -9,14 +9,12 @@ ibu_values=[35, 60, 85, 75]
 abv_values=[5.4, 7.1, 9.2, 4.3]
 color1='lightblue'
 color2='darkgreen'
-mytitle='Beer Comparison'
-tabtitle='beer!'
-myheading='Flying Dog Beers'
+mytitle='Example Bar Graph'
+tabtitle='CMKL'
+myheading='CMKL COVID-19'
 label1='IBU'
 label2='ABV'
-githublink='https://github.com/austinlasseter/flying-dog-beers'
-sourceurl='https://www.flyingdog.com/beers/'
-
+googledatalink='https://datastudio.google.com/s/t9O6mvj0THs'
 ########### Set up the chart
 bitterness = go.Bar(
     x=beers,
@@ -49,13 +47,13 @@ app.title=tabtitle
 ########### Set up the layout
 app.layout = html.Div(children=[
     html.H1(myheading),
+    html.A('Tables Google Data Studio', href=googledatalink),
     dcc.Graph(
         id='flyingdog',
         figure=beer_fig
     ),
-    html.A('Code on Github', href=githublink),
-    html.Br(),
-    html.A('Data Source', href=sourceurl),
+    
+    html.Br()
     ]
 )
 
